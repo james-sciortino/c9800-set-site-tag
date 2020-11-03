@@ -32,28 +32,28 @@ This Python code will accomplish the following tasks:
 5. For each Cisco AP that does not have a site-tag name that matches its policy-tag name, assign the AP to the appropriate site-tag. 
 
 # Installation Steps
-1. Clone the repository from a bash or PowerShell terminal
+1. Clone the repository from a bash or PowerShell terminal:
 ```console
 clone https://github.com/james-sciortino/C9800-Set-Site-Tag.git
 ```
-2. Navigate into the directory
+2. Navigate into the directory:
 ```console
 cd c9800-set-site-tag
 ```
-3. Update [config.py](config.py) with your C9800's information, including hostname or management IP address, port, username & password
+3. Update [config.py](config.py) with your C9800's information, including hostname or management IP address, port, username & password:
 ```console
 nano config.py
 ```
-4. Create the virtual environment in a sub dir in the same directory
+4. Create the virtual environment in a sub dir in the same directory:
 ```console
 python3 -m venv venv
 ```
-5. Start the virtual environment and install [requirements.txt](requirements.txt) from the <c9800-set-site-tag> folder
+5. Start the virtual environment and install [requirements.txt](requirements.txt) from the <c9800-set-site-tag> folder:
 ```console
 source venv/bin/activate
 pip install -r requirements.txt 
 ```
-6. Run the script from a bash or PowerShell terminal
+6. Run the script from a bash or PowerShell terminal:
 ```console
 python main.py
 ```
@@ -76,8 +76,6 @@ python main.py
 
 4. How do I properly modify [config.py](config.py) with the appropriate information? 
 
-*Do not modify any of the YANG data models below the line **# WLC API Calls***
-
 - **WLC_FQDN** = **IP address** or **FQDN** of your Catalyst 9800 WLC's ***management IP**
 - **WLC_PORT** = Port used for **RESTCONF** API calls on your WLC. Default is **443**
 - **WLC_USER** =  **Username** with **Privilege Level 15** on your Catalyst 9800 WLC
@@ -85,6 +83,9 @@ python main.py
 - **WLC_TAG** = The **name** of any **policy-tag** you want to exclude during discovery.
     - You can use the **+ operator** to concatenate as many tags that you want to exclude
     - For best results, leave this variable at its **default value**.
+
+
+*NOTE: Do not modify any of the YANG data models below the line **# WLC API Calls***
 
 # Tutorial
 *In this scenario, there are four fabric enabled APs were joined to a fabric-enabled C9800 WLC managed by DNA Center.*
@@ -142,7 +143,7 @@ Applying payload to C9800-80 Wireless LAN Controller..
 
 # Authors & Maintainers
 Please contact me with questions or comments.
-James Sciortino - james.sciortino@outlook.com
+- James Sciortino - james.sciortino@outlook.com
 
 # License
 This project is licensed under the terms of the MIT License.
