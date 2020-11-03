@@ -60,38 +60,37 @@ python main.py
 
 # FAQ 
 1. What is the purpose of each file?
-    [util.py](util.py) - Contains all necessary Python functions
-    [config.py](config.py) - Contains Catalyst 9800 WLC config info and YANG data models for API calls
-    [main.py](main.py) - Primary script. This is the file you execute to run this code. 
+    - [util.py](util.py) - Contains all necessary Python functions
+    - [config.py](config.py) - Contains Catalyst 9800 WLC config info and YANG data models for API calls
+    - [main.py](main.py) - Primary script. This is the file you execute to run this code. 
 2. Does this code use NETCONF, RESTCONF, or both?
-    This code leverages **RESTCONF** APIs and **YANG** data models only. **NETCONF** is not used.
+    - This code leverages **RESTCONF** APIs and **YANG** data models only. **NETCONF** is not used.
 3. How do I enable RESTCONF on my Catalyst 9800 WLC?
-    From a command prompt, type:
+    - From a command prompt, type:
     ```console
-        WLC(config)# restconf
+    WLC(config)# restconf
     ```
-    More information can be found [here](https://developer.cisco.com/docs/ios-xe/#!enabling-restconf-on-ios-xe/authentication)
+    - More information can be found [here](https://developer.cisco.com/docs/ios-xe/#!enabling-restconf-on-ios-xe/authentication)
 4. How do I properly modify [config.py](config.py) with the appropriate information? 
-    *Do not modify any of the YANG data models below the line **# WLC API Calls***
-
-    **WLC_FQDN** = **IP address** or **FQDN** of your Catalyst 9800 WLC's ***management IP**
-    **WLC_PORT** = Port used for **RESTCONF** API calls on your WLC. Default is **443**
-    **WLC_USER** =  **Username** with **Privilege Level 15** on your Catalyst 9800 WLC
-    **WLC_PASS** = **Password** of your **Username** with **Privilege Level 15** on your Catalyst 9800 WLC
-    **WLC_TAG** = The **name** of any **policy-tag** you want to exclude during discovery.
-        - You can use the **+ operator** to concatenate as many tags that you want to exclude
-        - For best results, leave this variable at its **default value**.
+- *Do not modify any of the YANG data models below the line **# WLC API Calls***
+- **WLC_FQDN** = **IP address** or **FQDN** of your Catalyst 9800 WLC's ***management IP**
+- **WLC_PORT** = Port used for **RESTCONF** API calls on your WLC. Default is **443**
+- **WLC_USER** =  **Username** with **Privilege Level 15** on your Catalyst 9800 WLC
+- **WLC_PASS** = **Password** of your **Username** with **Privilege Level 15** on your Catalyst 9800 WLC
+- **WLC_TAG** = The **name** of any **policy-tag** you want to exclude during discovery.
+    - You can use the **+ operator** to concatenate as many tags that you want to exclude
+    - For best results, leave this variable at its **default value**.
 
 # Tutorial
 *In this scenario, there are four fabric enabled APs were joined to a fabric-enabled C9800 WLC managed by DNA Center.*
-    - Each AP is assigned to the 1st Floor Site of the building **SesameSt**.
-    - Each AP is provisioned with its default policy-tag named "**PT_SesameSt_Floor1_bba53**"  
-    - The policy-tag name provides specific context to AP's floor assignment; only AP's on this floor are assigned to this policy-tag.
-    - Each AP is provisioned with its default site-tag named "**default-site-tag-fabric**"
-    - The site-tag name is generic and applied to all Cisco APs on the WLC.
+- Each AP is assigned to the 1st Floor Site of the building **SesameSt**.
+- Each AP is provisioned with its default policy-tag named "**PT_SesameSt_Floor1_bba53**"  
+- The policy-tag name provides specific context to AP's floor assignment; only AP's on this floor are assigned to this policy-tag.
+- Each AP is provisioned with its default site-tag named "**default-site-tag-fabric**"
+- The site-tag name is generic and applied to all Cisco APs on the WLC.
 *The goal is assign a unique site-tag name for each AP that matches its unique policy-tag name.*
-    - Each net-new site-tag will be cloned with the same profile assignments as the default site-tag.
-    - Each AP will be assigned to a working site-tag named "**PT_SesameSt_Floor1_bba53**" and then will be **rebooted**.
+- Each net-new site-tag will be cloned with the same profile assignments as the default site-tag.
+- Each AP will be assigned to a working site-tag named "**PT_SesameSt_Floor1_bba53**" and then will be **rebooted**.
 
 ```
 $ python main.py 
