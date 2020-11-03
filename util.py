@@ -2,6 +2,7 @@ from config import  WLC_FQDN, \
                     WLC_PORT, \
                     WLC_USER, \
                     WLC_PASS, \
+                    WLC_TAG, \
                     YANG_SITE_CFG, \
                     YANG_WLAN_CFG, \
                     YANG_AP_CFG , \
@@ -46,7 +47,7 @@ def wlan_cfg(): # Function that performs a GET API call to return JSON data of e
     policy_lists = response.json()["Cisco-IOS-XE-wireless-wlan-cfg:wlan-cfg-data"]["policy-list-entries"]["policy-list-entry"] # Create a variable named 'policy_lists' which contains the returned JSON data from our most recent 'GET' REST API call.
     policy_list = [] # Create an empty Python list, where all our WLC policy-tag name values will be added. 
     for tag in policy_lists: # Initiate a Python 'for loop' that will iterate through our variable named 'policy_lists' which contains the returned JSON data of our policy-tag names.
-        if tag['tag-name'] not in ['default-policy-tag']: # Python logic that excludes any policy tag named 'default-policy-tag'
+        if tag['tag-name'] not in WLC_TAG: # Python logic that excludes any policy tag named 'default-policy-tag'
                 policy_list.append(tag['tag-name']) # Add the value of each tag-name to our Python list 'policy_list'. The JSON data is converted to a Python list here.
     policy_table.add_row([policy_list])
     print(policy_table)

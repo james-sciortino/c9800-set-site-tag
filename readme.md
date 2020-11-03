@@ -37,6 +37,8 @@ pip install -r requirements.txt
 
 1. Update "config.py" with your C9800's information, including hostname, port, username & password.
     - Do not modify any of the YANG data models below "# WLC API Calls"   
+    - The variable WLC_TAG can be used to exclude unused or unassigned policy_tags      
+    - You can use the + operator to exclude as many tags as you need.   
 2. Make sure your folder has the following three files:
     - util.py - contains all necessary Python functions
     - config.py - contains WLC config info and YANG data models for API calls

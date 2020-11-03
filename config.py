@@ -2,10 +2,11 @@
 # Replace all values below with your production WLC
 
 # WLC Parameters
-WLC_FQDN = "C9800.example.com"
+WLC_FQDN = "c9800.example.wlc"
 WLC_PORT = "443"
 WLC_USER =  "username"
 WLC_PASS = "password"
+WLC_TAG = ["default-policy-tag"]+["insert_2nd_tag"]+["insert_3rd_tag"]
 
 # WLC API Calls
 YANG_SITE_CFG = "/restconf/data/Cisco-IOS-XE-wireless-site-cfg:site-cfg-data"
