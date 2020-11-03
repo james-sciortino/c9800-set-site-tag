@@ -9,18 +9,18 @@
 # Purpose
 *The purpose of this code is to assist wireless administrators to programmatically automate the creation and assignment of unique site-tags for efficient AP management.*
 
-This code was originally designed for wireless administrators of fabric enabled Catalyst 9800 WLCs and APs managed by DNA Center:
+*This code will standardize all fabric enabled APs by assigning them to a working site-tag with the same name as its policy-tag to achieve the following:*
+- Help wireless administrators to better leverage AP site-tags for user segmentation via ISE authorization policies. 
+- Maintain a 1:1 policy-tag to site-tag naming convention for proper organization and management of fabric enabled APs. 
+
+# Intended Audience
+*This code was originally designed for wireless administrators of fabric enabled Catalyst 9800 WLCs and APs managed by DNA Center:*
 - By default, DNA Center will create and assign unique policy-tag specific to the fabric AP's floor assignment in the DNA site hierarchy. 
 - However, DNA Center will not create and assign a unique site-tag. 
 - Instead, it will assign the AP to the default site-tag named 'default-site-tag-fabric'.
 
-**This code will standardize all fabric enabled APs by assigning them to a working site-tag with the same name as its policy-tag to achieve the following:**
-- Help wireless administrators to better leverage AP site-tags for user segmentation via ISE authorization policies. 
-- Maintain a 1:1 policy-tag to site-tag naming convention for proper organization and management of fabric enabled APs. 
-
 *This code can also be applied to traditional 'Over-The-Top' Cisco APs and Catalyst 9800 WLCs as well.*
-
- When traditional Cisco APs initially join the C9800 WLC, they are assigned to a default site-tag and policy-tag:
+- When traditional Cisco APs initially join the C9800 WLC, they are assigned to a default site-tag and policy-tag.
 - Wireless administrators must first create a unique policy tag manually and assign each AP to it. 
 - This code can later be utilized to standardize all OTT APs with a site-tag to a working site-tag with the same name as its policy-tag.
 
