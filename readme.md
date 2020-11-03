@@ -45,50 +45,51 @@ pip install -r requirements.txt
     - python main.py
 
 Example Use-Case:
-The following 4 APs were joined to a fabric-enabled C9800 WLC managed by DNA Center.
-Each AP is currently functional and assigned to a floor in the DNA Center site hierarchy. 
-Each AP is provisioned with the default policy-tag and site-tag configured by DNA Center.
+1. The following 4 APs were joined to a fabric-enabled C9800 WLC managed by DNA Center.
+2. Each AP is currently functional and assigned to a floor in the DNA Center site hierarchy. 
+3. Each AP is provisioned with the default policy-tag and site-tag configured by DNA Center.
     - The policy-tag name provides specific context to AP's floor assignment; only AP's on this floor are assigned to this policy-tag.
     - The site-tag name is generic and applied to all Cisco APs on the WLC.
-The goal is to assign the AP to a site-tag with a name that matches its unique policy-tag name.
+4. The goal is to assign the AP to a site-tag with a name that matches its unique policy-tag name.
 
-In this scenario, each AP is assigned to the 1st Floor Site of site SesameSt.
-PT_SesameSt_Floor1_bba53
+In this scenario, each AP is assigned to the 1st Floor Site of site SesameSt: "PT_SesameSt_Floor1_bba53"
 
 $ python main.py 
-+---------------------------------------------+
+
 Scanning existing list of policy-tags...
-+---------------------------------------------+
+
 Existing Policy Tags...
-+---------------------------------------------+
+
 ['PT_SesameSt_Floor1_bba53', 'default-policy-tag']
-+---------------------------------------------+
+
 Comparing policy-tags and site-tags...
-+---------------------------------------------+
+
 The following site-tags need to be created...
-+---------------------------------------------+
+
 PT_SesameSt_Floor1_bba53
-+---------------------------------------------+
+
 Do you want to create these site-tag(s)? (Y/N) Yes
-+---------------------------------------------+
+
 OK. Cloning existing site-tag 'default-site-tag-fabric' and creating new site-tag(s) as needed.
-+---------------------------------------------+
+
 Applying cloned site-tag(s) to C9800 Wireless LAN Controller...
-+---------------------------------------------+
+
 New site-tags created successfully.
-+---------------------------------------------+
+
 Do you want to assign the new site-tag(s) to the appropriate Cisco Access Points? (Y/N) Yes
-+---------------------------------------------+
+
 Scanning Cisco Access Points..
-+---------------------------------------------+
+
 The following APs and site-tag assignments will be changed...
-+------------------------+-------------------------+
+
 AP: 
 [7c:ad:74:ff:6e:be, PT_SesameSt_Floor1_bba53]
 [a0:3d:6f:b7:44:60, PT_SesameSt_Floor1_bba53]
 [a0:e0:af:3f:00:44, PT_SesameSt_Floor1_bba53]
 [f4:db:e6:43:97:82, PT_SesameSt_Floor1_bba53]
-+------------------------+-------------------------+
+
 WARNING: Applying this change to the selected group of APs will cause them to reboot. Do you want to continue? (Y/N) Yes
+
 Applying payload to C9800-80 Wireless LAN Controller..
+
 <Response [204]>
