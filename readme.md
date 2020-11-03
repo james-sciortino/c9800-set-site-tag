@@ -41,7 +41,7 @@ This Python code will accomplish the following tasks:
 # Installation Steps
 1. Clone the repository from a Bash or PowerShell terminal
 
-**Bash and PowerShell:**
+    **Bash and PowerShell:**
 ```console
 git clone https://github.com/james-sciortino/C9800-Set-Site-Tag.git
 ```
