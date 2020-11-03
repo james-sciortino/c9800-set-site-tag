@@ -112,7 +112,7 @@ python main.py
 
 4. How do I properly modify [config.py](config.py) with the appropriate information? 
 
-- **WLC_FQDN** = **IP address** or **FQDN** of your Catalyst 9800 WLC's ***management IP**
+- **WLC_FQDN** = **IP address** or **FQDN** of your Catalyst 9800 WLC's **management IP**
 - **WLC_PORT** = Port used for **RESTCONF** API calls on your WLC. Default is **443**
 - **WLC_USER** =  **Username** with **Privilege Level 15** on your Catalyst 9800 WLC
 - **WLC_PASS** = **Password** of your **Username** with **Privilege Level 15** on your Catalyst 9800 WLC
