@@ -9,7 +9,7 @@
 # Purpose
 *The purpose of this code is to assist wireless administrators to programmatically automate the creation and assignment of unique site-tags for efficient AP management.*
 
-*This code will standardize all fabric enabled APs by assigning them to a working site-tag with the same name as its policy-tag to achieve the following:*
+This code will standardize all fabric enabled APs by assigning them to a working site-tag with the same name as its policy-tag to achieve the following:
 - Help wireless administrators to better leverage AP site-tags for user segmentation via ISE authorization policies. 
 - Maintain a 1:1 policy-tag to site-tag naming convention for proper organization and management of fabric enabled APs. 
 
