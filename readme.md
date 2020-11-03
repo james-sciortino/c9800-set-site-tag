@@ -64,13 +64,16 @@ python main.py
     - [config.py](config.py) - Contains Catalyst 9800 WLC config info and YANG data models for API calls
     - [main.py](main.py) - Primary script. This is the file you execute to run this code. 
 2. Does this code use NETCONF, RESTCONF, or both?
+
     - This code leverages **RESTCONF** APIs and **YANG** data models only. **NETCONF** is not used.
+
 3. How do I enable RESTCONF on my Catalyst 9800 WLC?
     - From a command prompt, type:
     ```console
     WLC(config)# restconf
     ```
     - More information can be found [here](https://developer.cisco.com/docs/ios-xe/#!enabling-restconf-on-ios-xe/authentication)
+    
 4. How do I properly modify [config.py](config.py) with the appropriate information? 
 
 *Do not modify any of the YANG data models below the line **# WLC API Calls***
