@@ -57,7 +57,7 @@ cd c9800-set-site-tag
 ```console
 nano config.py
 ```
-    **PowerShell:**
+**PowerShell:**
 ```console
 notepad config.py
 ```
@@ -74,7 +74,7 @@ python -m venv venv
 source venv/scripts/activate
 pip install -r requirements.txt 
 ```
-    **PowerShell:**
+**PowerShell:**
 ```console
 venv/scripts/activate.ps1
 pip install -r requirements.txt 
