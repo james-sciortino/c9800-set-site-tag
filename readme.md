@@ -39,49 +39,57 @@ This Python code will accomplish the following tasks:
 5. For each Cisco AP that does not have a site-tag name that matches its policy-tag name, assign the AP to the appropriate site-tag. 
 
 # Installation Steps
-1. Clone the repository from a Bash or PowerShell terminal
 
-**Bash and PowerShell:**
+**Bash / Ubuntu / Linux**
+1. Clone the repository from a bash terminal:
 ```console
 git clone https://github.com/james-sciortino/C9800-Set-Site-Tag.git
 ```
 2. Navigate into the directory
-
-**Bash and PowerShell:**
 ```console
 cd c9800-set-site-tag
 ```
 3. Update [config.py](config.py) with your C9800's information, including hostname or management IP address, port, username & password
-
-**Bash:**
 ```console
 nano config.py
 ```
-**PowerShell:**
-```console
-notepad config.py
-```
-4. Create the virtual environment in a sub dir in the same directory
-
-**Bash and PowerShell:**
+4. Create the virtual environment in a new sub directory
 ```console
 python -m venv venv
 ```
 5. Start the virtual environment and install [requirements.txt](requirements.txt) from the <c9800-set-site-tag> folder:
-
-**Bash:**
 ```console
 source venv/scripts/activate
 pip install -r requirements.txt 
 ```
-**PowerShell:**
+6. Run the code
+```console
+python main.py
+```
+
+**PowerShell**
+1. Clone the repository from a PowerShell terminal:
+```console
+git clone https://github.com/james-sciortino/C9800-Set-Site-Tag.git
+```
+2. Navigate into the directory
+```console
+cd c9800-set-site-tag
+```
+3. Update [config.py](config.py) with your C9800's information, including hostname or management IP address, port, username & password
+```console
+notepad config.py
+```
+4. Create the virtual environment in a new sub directory
+```console
+python -m venv venv
+```
+5. Start the virtual environment and install [requirements.txt](requirements.txt) from the <c9800-set-site-tag> folder:
 ```console
 venv/scripts/activate.ps1
 pip install -r requirements.txt 
 ```
 6. Run the code
-
-**Bash and PowerShell:**
 ```console
 python main.py
 ```
