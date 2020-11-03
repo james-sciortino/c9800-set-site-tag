@@ -1,16 +1,13 @@
 # C9800-Set-Site-Tag
-This script is for the Cisco Catalyst 9800 Wireless Controller platform.
-It utilizes several Cisco-IOS-XE 17.3.1 YANG Models.
-This script is intended for wireless administrators to programmatically automate the creation and assignment of unique site-tags for efficient AP management. 
+This script is for the Cisco Catalyst 9800 Wireless Controller platform, and utilizes several Cisco-IOS-XE 17.3.1 YANG Models.
+
+Its purpose is to assist wireless administrators to programmatically automate the creation and assignment of unique site-tags for efficient AP management. 
 
 # Summary
 Site-tags on the C9800 Wireless Controller Platform serve the following purposes:
 1. Define if an AP is configured for Local Mode or Flexconnect mode, and also contains the AP Join Profile and Flex Profile that is applied to the AP.
 2. Include attributes that are specific to the physical site. For example, the list of primary APs for efficient upgrade is a part of a site-tag.
 3. Used as a AAA RADIUS attribute in Cisco ISE, particularly to differentiate authorization results for wireless clients associating to different APs.
-
-Wireless administrators can programmatically automate the creation and assignment of unique site-tags for efficient AP management. 
-Site-tags can be useful as RADIUS attributes in Cisco ISE, particularly to differentiate authorization results for wireless clients associating to different APs.
 
 # How it works
 This Python code intends to accomplish the following tasks:
@@ -31,12 +28,6 @@ When Cisco APs initially join the C9800 WLC, they are assigned to a default RF-t
 Wireless administrators can create a unique policy tag manually and assign each AP to it, then use this code to create and assign each AP to a unique site-tag.
 
 # How to use
-From a bash or PowerShell terminal:
-python main.py
-
-To verify all required packages are installed:
-pip install -r requirements.txt
-
 1. Update "config.py" with your C9800's information, including hostname, port, username & password.
     - Do not modify any of the YANG data models below "# WLC API Calls"   
     - The variable WLC_TAG can be used to exclude unused or unassigned policy_tags      
@@ -47,6 +38,9 @@ pip install -r requirements.txt
     - main.py - primary script
 3. From a bash or PowerShell terminal, run the following command:
     - python main.py
+
+To verify all required packages are installed:
+pip install -r requirements.txt
 
 Example Use-Case:
 1. The following 4 APs were joined to a fabric-enabled C9800 WLC managed by DNA Center.
@@ -101,6 +95,5 @@ WARNING: Applying this change to the selected group of APs will cause them to re
 Applying payload to C9800-80 Wireless LAN Controller..
 
 <Response [204]>
-
 
 [![published](https://static.production.devnetcloud.com/codeexchange/assets/images/devnet-published.svg)](https://developer.cisco.com/codeexchange/github/repo/james-sciortino/C9800-Set-Site-Tag)
