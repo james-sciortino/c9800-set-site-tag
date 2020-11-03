@@ -2,20 +2,27 @@
 
 # C9800-Set-Site-Tag.py
 
-*This script is for the Cisco Catalyst 9800 Wireless Controller platform, and utilizes several Cisco-IOS-XE 17.3.1 YANG Models.*
+*This code is for the Cisco Catalyst 9800 Wireless Controller platform, and utilizes several Cisco-IOS-XE 17.3.1 YANG Models.*
 
 ---
 
 # Purpose
-The purpose of this script is to assist wireless administrators to programmatically automate the creation and assignment of unique site-tags for efficient AP management. 
+*The purpose of this code is to assist wireless administrators to programmatically automate the creation and assignment of unique site-tags for efficient AP management.*
 
-This script was originally intended for administrators of fabric enabled Catalyst 9800 WLCs and APs managed by DNA Center. By default, for each fabric enabled AP, DNA Center will create and assign unique policy-tag specific to the fabric AP's floor assignment in the DNA site hierarchy. However, DNA Center will not create and assign a unique site-tag. Instead, it will assign the AP to the default site-tag named 'default-site-tag-fabric'.
+This code was originally designed for wireless administrators of fabric enabled Catalyst 9800 WLCs and APs managed by DNA Center:
+- By default, for each fabric enabled AP, DNA Center will create and assign unique policy-tag specific to the fabric AP's floor assignment in the DNA site hierarchy. 
+- However, DNA Center will not create and assign a unique site-tag. 
+- Instead, it will assign the AP to the default site-tag named 'default-site-tag-fabric'.
 
-This script will standardize all fabric enabled APs by assigning them to a working site-tag with the same name as its policy-tag. 
+**This code will standardize all fabric enabled APs by assigning them to a working site-tag with the same name as its policy-tag to achieve the following:**
+- Help wireless administrators to better leverage AP site-tags for user segmentation via ISE authorization policies. 
+- Maintain a 1:1 policy-tag to site-tag naming convention for proper organization and management of fabric enabled APs. 
 
-This code will empower wireless administrators to better leverage AP site-tags for user segmentation via ISE authorization policies. This will also maintain a 1:1 policy-tag to site-tag naming convention for proper organization and management of fabric enabled APs. 
+*This code can also be applied to traditional 'Over-The-Top' Cisco APs and Catalyst 9800 WLCs as well.*
 
-This code can also be applied to traditional 'Over-The-Top' Cisco APs and Catalyst 9800 WLCs as well. When Cisco APs initially join the C9800 WLC, they are assigned to a default site-tag and policy-tag. Wireless administrators must first create a unique policy tag manually and assign each AP to it. This this code can be utilized to standardize all OTT APs with a site-tag to a working site-tag with the same name as its policy-tag.
+ When traditional Cisco APs initially join the C9800 WLC, they are assigned to a default site-tag and policy-tag:
+- Wireless administrators must first create a unique policy tag manually and assign each AP to it. 
+- This code can later be utilized to standardize all OTT APs with a site-tag to a working site-tag with the same name as its policy-tag.
 
 # Site-Tag Summary
 Site-tags on the Catalyst 9800 Wireless Controller platform replace AP groups found on Cisco Aironet WLCs, and serve the following purposes:
@@ -53,7 +60,7 @@ python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt 
 ```
-6. Run the script from a bash or PowerShell terminal:
+6. Run the code from a bash or PowerShell terminal:
 ```console
 python main.py
 ```
@@ -62,7 +69,7 @@ python main.py
 1. What is the purpose of each file?
     - [util.py](util.py) - Contains all necessary Python functions
     - [config.py](config.py) - Contains Catalyst 9800 WLC config info and YANG data models for API calls
-    - [main.py](main.py) - Primary script. This is the file you execute to run this code. 
+    - [main.py](main.py) - Primary code. This is the file you execute to run this code. 
 2. Does this code use NETCONF, RESTCONF, or both?
 
     - This code leverages **RESTCONF** APIs and **YANG** data models only. **NETCONF** is not used.
