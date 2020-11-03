@@ -72,6 +72,9 @@ python main.py
     ```
     - More information can be found [here](https://developer.cisco.com/docs/ios-xe/#!enabling-restconf-on-ios-xe/authentication)
 4. How do I properly modify [config.py](config.py) with the appropriate information? 
+
+*Do not modify any of the YANG data models below the line **# WLC API Calls***
+
 - **WLC_FQDN** = **IP address** or **FQDN** of your Catalyst 9800 WLC's ***management IP**
 - **WLC_PORT** = Port used for **RESTCONF** API calls on your WLC. Default is **443**
 - **WLC_USER** =  **Username** with **Privilege Level 15** on your Catalyst 9800 WLC
@@ -79,8 +82,6 @@ python main.py
 - **WLC_TAG** = The **name** of any **policy-tag** you want to exclude during discovery.
     - You can use the **+ operator** to concatenate as many tags that you want to exclude
     - For best results, leave this variable at its **default value**.
-
-*Do not modify any of the YANG data models below the line **# WLC API Calls***
 
 # Tutorial
 *In this scenario, there are four fabric enabled APs were joined to a fabric-enabled C9800 WLC managed by DNA Center.*
