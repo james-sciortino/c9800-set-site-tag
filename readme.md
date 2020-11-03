@@ -4,8 +4,10 @@ It utilizes several Cisco-IOS-XE 17.3.1 YANG Models.
 This script is intended for wireless administrators to programmatically automate the creation and assignment of unique site-tags for efficient AP management. 
 
 # Summary
-Site-tags define if the AP is configured for Local Mode or Flexconnect mode, and also contains the AP Join Profile and Flex Profile that is applied to the AP.
-Site-tags also comprise attributes that are specific to the physical site. For example, the list of primary APs for efficient upgrade is a part of a site-tag.
+Site-tags on the C9800 Wireless Controller Platform serve the following purposes:
+1. Define if an AP is configured for Local Mode or Flexconnect mode, and also contains the AP Join Profile and Flex Profile that is applied to the AP.
+2. Include attributes that are specific to the physical site. For example, the list of primary APs for efficient upgrade is a part of a site-tag.
+3. Used as a AAA RADIUS attribute in Cisco ISE, particularly to differentiate authorization results for wireless clients associating to different APs.
 
 Wireless administrators can programmatically automate the creation and assignment of unique site-tags for efficient AP management. 
 Site-tags can be useful as RADIUS attributes in Cisco ISE, particularly to differentiate authorization results for wireless clients associating to different APs.
@@ -52,9 +54,9 @@ Example Use-Case:
 3. Each AP is provisioned with the default policy-tag and site-tag configured by DNA Center.
     - The policy-tag name provides specific context to AP's floor assignment; only AP's on this floor are assigned to this policy-tag.
     - The site-tag name is generic and applied to all Cisco APs on the WLC.
-4. The goal is to assign the AP to a site-tag with a name that matches its unique policy-tag name.
-
-In this scenario, each AP is assigned to the 1st Floor Site of site SesameSt: "PT_SesameSt_Floor1_bba53"
+4. The goal is assign a unique site-tag name for each AP that matches its unique policy-tag name.
+5. Each net-new site-tag will be cloned with the same profile assignments as the default site-tag.
+6. In this scenario, each AP is assigned to the 1st Floor Site of site SesameSt: "PT_SesameSt_Floor1_bba53"
 
 $ python main.py 
 
@@ -99,3 +101,6 @@ WARNING: Applying this change to the selected group of APs will cause them to re
 Applying payload to C9800-80 Wireless LAN Controller..
 
 <Response [204]>
+
+
+[![published](https://static.production.devnetcloud.com/codeexchange/assets/images/devnet-published.svg)](https://developer.cisco.com/codeexchange/github/repo/james-sciortino/C9800-Set-Site-Tag)
