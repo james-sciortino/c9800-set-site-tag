@@ -124,7 +124,7 @@ python main.py
 *NOTE: Do not modify any of the YANG data models below the line **# WLC API Calls***
 
 # Tutorial
-In this scenario, there are four fabric enabled APs were joined to a fabric-enabled C9800 WLC managed by DNA Center.
+In this scenario, there are four fabric APs joined to a fabric C9800 WLC managed by DNA Center.
 - Each AP is assigned to the 1st Floor Site of the building **SesameSt**.
 - Each AP is provisioned with its default policy-tag named "**PT_SesameSt_Floor1_bba53**"  
 - The policy-tag name provides specific context to AP's floor assignment; only AP's on this floor are assigned to this policy-tag.
