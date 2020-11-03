@@ -84,8 +84,11 @@ The following APs and site-tag assignments will be changed...
 
 AP: 
 [7c:ad:74:ff:6e:be, PT_SesameSt_Floor1_bba53]
+
 [a0:3d:6f:b7:44:60, PT_SesameSt_Floor1_bba53]
+
 [a0:e0:af:3f:00:44, PT_SesameSt_Floor1_bba53]
+
 [f4:db:e6:43:97:82, PT_SesameSt_Floor1_bba53]
 
 WARNING: Applying this change to the selected group of APs will cause them to reboot. Do you want to continue? (Y/N) Yes
