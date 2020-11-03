@@ -5,9 +5,9 @@ Its purpose is to assist wireless administrators to programmatically automate th
 
 # Summary
 Site-tags on the C9800 Wireless Controller Platform serve the following purposes:
-1. Define if an AP is configured for Local Mode or Flexconnect mode, and also contains the AP Join Profile and Flex Profile that is applied to the AP.
+1. Define if an AP is configured for Local Mode or Flexconnect mode; contains the AP Join Profile and Flex Profile that is applied to the AP.
 2. Include attributes that are specific to the physical site. For example, the list of primary APs for efficient upgrade is a part of a site-tag.
-3. Used as a AAA RADIUS attribute in Cisco ISE, particularly to differentiate authorization results for wireless clients associating to different APs.
+3. Sent as a AAA RADIUS attribute that can be used for Cisco ISE, particularly to differentiate authorization results for wireless clients associating to different APs.
 
 # How it works
 This Python code intends to accomplish the following tasks:
@@ -18,7 +18,7 @@ This Python code intends to accomplish the following tasks:
 - Step 5. For each Cisco AP that does not have a site-tag name that matches its policy-tag name, assign the AP to the appropriate site-tag. 
 
 For Fabric Enabled APs and WLCs:
-This code is particularly useful for fabric-enabled APs and WLCs managed by DNA Center. 
+This code is particularly useful for fabric enabled APs and WLCs managed by DNA Center. 
 By default, without any Day-0 template, DNA Center will create a unique policy-tag specific to the fabric AP's floor assignment in the DNA site hierarchy. However, DNA Center will not create and assign a unique site-tag, but instead
 will assign the AP to the default site-tag named 'default-site-tag-fabric'.
 This script will standardize all fabric enabled APs to be assigned to a working site-tag with the same name as its policy-tag.
