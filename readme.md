@@ -40,7 +40,7 @@ clone https://github.com/james-sciortino/C9800-Set-Site-Tag.git
 ```console
 cd c9800-set-site-tag
 ```
-3. Update [config.py](config.py) with your C9800's information, including hostname or management IP address, port, username & password. 
+3. Update [config.py](config.py) with your C9800's information, including hostname or management IP address, port, username & password
 ```console
 nano config.py
 ```
@@ -48,12 +48,12 @@ nano config.py
 ```console
 python3 -m venv venv
 ```
-5. Start the virtual environment and install [requirements.txt](requirements.txt) from the <c9800-set-site-tag> folder.
+5. Start the virtual environment and install [requirements.txt](requirements.txt) from the <c9800-set-site-tag> folder
 ```console
 source venv/bin/activate
 pip install -r requirements.txt 
 ```
-6. Run the script from a bash or PowerShell terminal.
+6. Run the script from a bash or PowerShell terminal
 ```console
 python main.py
 ```
