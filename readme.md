@@ -25,11 +25,11 @@ Site-tags on the Catalyst 9800 Wireless Controller platform replace AP groups fo
 
 # How This Code Works
 This Python code will accomplish the following tasks:
-- 1. Identify all policy-tags and site-tags that exist on the C9800 WLC.
-- 2. Compare the policy-tag names and site-tag names.
-- 3. For each difference, create a new site-tag with a name that matches the policy-tag.
-- 4. Identify all Cisco AP's and their assigned site-tag.
-- 5. For each Cisco AP that does not have a site-tag name that matches its policy-tag name, assign the AP to the appropriate site-tag. 
+1. Identify all policy-tags and site-tags that exist on the C9800 WLC.
+2. Compare the policy-tag names and site-tag names.
+3. For each difference, create a new site-tag with a name that matches the policy-tag.
+4. Identify all Cisco AP's and their assigned site-tag.
+5. For each Cisco AP that does not have a site-tag name that matches its policy-tag name, assign the AP to the appropriate site-tag. 
 
 # Installation Steps
 1. Clone the repository from a bash or PowerShell terminal
@@ -73,7 +73,7 @@ python main.py
     WLC(config)# restconf
     ```
     - More information can be found [here](https://developer.cisco.com/docs/ios-xe/#!enabling-restconf-on-ios-xe/authentication)
-    
+
 4. How do I properly modify [config.py](config.py) with the appropriate information? 
 
 *Do not modify any of the YANG data models below the line **# WLC API Calls***
