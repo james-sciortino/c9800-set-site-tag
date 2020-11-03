@@ -19,13 +19,14 @@ This Python code intends to accomplish the following tasks:
 
 For Fabric Enabled APs and WLCs:
 This code is particularly useful for fabric-enabled APs and WLCs managed by DNA Center. 
-By default, without any Day-0 template, DNA-C will create a unique policy-tag specific to the fabric AP's floor assignment in the DNA site hierarchy. However, DNA-C will not create a unique site-tag, but instead
-will assign the AP to the default site-tag, named 'default-site-tag-fabric'.
+By default, without any Day-0 template, DNA Center will create a unique policy-tag specific to the fabric AP's floor assignment in the DNA site hierarchy. However, DNA Center will not create and assign a unique site-tag, but instead
+will assign the AP to the default site-tag named 'default-site-tag-fabric'.
+This script will standardize all fabric enabled APs to be assigned to a working site-tag with the same name as its policy-tag.
 
 For 'Over-The-Top' APs and WLC's:
 This code can be beneficial for traditional APs and WLCs.
 When Cisco APs initially join the C9800 WLC, they are assigned to a default RF-tag, site-tag and policy-tag. 
-Wireless administrators can create a unique policy tag manually and assign each AP to it, then use this code to create and assign each AP to a unique site-tag.
+Wireless administrators must first create a unique policy tag manually and assign each AP to it. This script will standardize all fabric enabled APs to be assigned to a working site-tag with the same name as its policy-tag.
 
 # How to use
 1. Update "config.py" with your C9800's information, including hostname, port, username & password.
