@@ -19,17 +19,17 @@ This code can also be applied to traditional 'Over-The-Top' Cisco APs and Cataly
 
 # Site-Tag Summary
 Site-tags on the Catalyst 9800 Wireless Controller platform replace AP groups found on Cisco Aironet WLCs, and serve the following purposes:
-1. Define if an AP is configured for Local Mode or Flexconnect mode; contains the AP Join Profile and Flex Profile that is applied to the AP.
-2. Include attributes that are specific to the physical site. For example, the list of primary APs for efficient upgrade is a part of a site-tag.
-3. Sent as a AAA RADIUS attribute that can be used for Cisco ISE, particularly to differentiate authorization results for wireless clients associating to different APs.
+- Define if an AP is configured for Local Mode or Flexconnect mode; contains the AP Join Profile and Flex Profile that is applied to the AP.
+- Include attributes that are specific to the physical site. For example, the list of primary APs for efficient upgrade is a part of a site-tag.
+- Sent as a AAA RADIUS attribute that can be used for Cisco ISE, particularly to differentiate authorization results for wireless clients associating to different APs.
 
 # How This Code Works
 This Python code will accomplish the following tasks:
-- Step 1. Identify all policy-tags and site-tags that exist on the C9800 WLC.
-- Step 2. Compare the policy-tag names and site-tag names.
-- Step 3. For each difference, create a new site-tag with a name that matches the policy-tag.
-- Step 4. Identify all Cisco AP's and their assigned site-tag.
-- Step 5. For each Cisco AP that does not have a site-tag name that matches its policy-tag name, assign the AP to the appropriate site-tag. 
+- 1. Identify all policy-tags and site-tags that exist on the C9800 WLC.
+- 2. Compare the policy-tag names and site-tag names.
+- 3. For each difference, create a new site-tag with a name that matches the policy-tag.
+- 4. Identify all Cisco AP's and their assigned site-tag.
+- 5. For each Cisco AP that does not have a site-tag name that matches its policy-tag name, assign the AP to the appropriate site-tag. 
 
 # Installation Steps
 1. Clone the repository from a bash or PowerShell terminal
@@ -72,7 +72,6 @@ python main.py
     ```
     - More information can be found [here](https://developer.cisco.com/docs/ios-xe/#!enabling-restconf-on-ios-xe/authentication)
 4. How do I properly modify [config.py](config.py) with the appropriate information? 
-*Do not modify any of the YANG data models below the line **# WLC API Calls***
 - **WLC_FQDN** = **IP address** or **FQDN** of your Catalyst 9800 WLC's ***management IP**
 - **WLC_PORT** = Port used for **RESTCONF** API calls on your WLC. Default is **443**
 - **WLC_USER** =  **Username** with **Privilege Level 15** on your Catalyst 9800 WLC
@@ -80,6 +79,8 @@ python main.py
 - **WLC_TAG** = The **name** of any **policy-tag** you want to exclude during discovery.
     - You can use the **+ operator** to concatenate as many tags that you want to exclude
     - For best results, leave this variable at its **default value**.
+
+*Do not modify any of the YANG data models below the line **# WLC API Calls***
 
 # Tutorial
 *In this scenario, there are four fabric enabled APs were joined to a fabric-enabled C9800 WLC managed by DNA Center.*
