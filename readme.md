@@ -100,26 +100,7 @@ Scanning existing list of policy-tags...
 +-------------------------------------------------------------------------+
 |                           Existing Policy Tags                          |
 +-------------------------------------------------------------------------+
-| ['dna-generated-tag', 'homelab-policy-tag', 'PT_SesameSt_Floor1_bba53'] |
-+-------------------------------------------------------------------------+
-Comparing policy-tags and site-tags...
-+---------------------------------------------+
-The following site-tags need to be created...
-+-------------------+
-| Missing Site-Tags |
-+-------------------+
-|         []        |
-+-------------------+
-Do you want to create these site-tag(s)? (Y/N) N
-
-james@James-PC MINGW64 ~/OneDrive/James/Python/Network-Automation/C9800/Site-Tag-Script (master)
-$ python main.py 
-+---------------------------------------------+
-Scanning existing list of policy-tags...
-+-------------------------------------------------------------------------+
-|                           Existing Policy Tags                          |
-+-------------------------------------------------------------------------+
-| ['dna-generated-tag', 'homelab-policy-tag', 'PT_SesameSt_Floor1_bba53'] |
+| ['dna-generated-tag', 'default-policy-tag', 'PT_SesameSt_Floor1_bba53'] |
 +-------------------------------------------------------------------------+
 Comparing policy-tags and site-tags...
 +---------------------------------------------+
