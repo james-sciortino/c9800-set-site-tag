@@ -10,7 +10,7 @@
 *The purpose of this code is to assist wireless administrators to programmatically automate the creation and assignment of unique site-tags for efficient AP management.*
 
 This code was originally designed for wireless administrators of fabric enabled Catalyst 9800 WLCs and APs managed by DNA Center:
-- By default, for each fabric enabled AP, DNA Center will create and assign unique policy-tag specific to the fabric AP's floor assignment in the DNA site hierarchy. 
+- By default, DNA Center will create and assign unique policy-tag specific to the fabric AP's floor assignment in the DNA site hierarchy. 
 - However, DNA Center will not create and assign a unique site-tag. 
 - Instead, it will assign the AP to the default site-tag named 'default-site-tag-fabric'.
 
