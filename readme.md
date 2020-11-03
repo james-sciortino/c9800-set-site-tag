@@ -16,7 +16,7 @@ This script will standardize all fabric enabled APs to be assigned to a working 
 
 For 'Over-The-Top' APs and WLC's:
 When Cisco APs initially join the C9800 WLC, they are assigned to a default RF-tag, site-tag and policy-tag. 
-Wireless administrators must first create a unique policy tag manually and assign each AP to it. This script will standardize all fabric enabled APs to be assigned to a working site-tag with the same name as its policy-tag.
+Wireless administrators must first create a unique policy tag manually and assign each AP to it. This script will standardize all OTT APs to be assigned to a working site-tag with the same name as its policy-tag.
 
 # How it works
 This Python code will accomplish the following tasks:
