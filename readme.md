@@ -83,6 +83,7 @@ Scanning Cisco Access Points..
 The following APs and site-tag assignments will be changed...
 
 AP: 
+
 [7c:ad:74:ff:6e:be, PT_SesameSt_Floor1_bba53]
 
 [a0:3d:6f:b7:44:60, PT_SesameSt_Floor1_bba53]
