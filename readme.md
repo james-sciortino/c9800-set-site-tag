@@ -72,7 +72,7 @@ python main.py
     ```
     - More information can be found [here](https://developer.cisco.com/docs/ios-xe/#!enabling-restconf-on-ios-xe/authentication)
 4. How do I properly modify [config.py](config.py) with the appropriate information? 
-- *Do not modify any of the YANG data models below the line **# WLC API Calls***
+*Do not modify any of the YANG data models below the line **# WLC API Calls***
 - **WLC_FQDN** = **IP address** or **FQDN** of your Catalyst 9800 WLC's ***management IP**
 - **WLC_PORT** = Port used for **RESTCONF** API calls on your WLC. Default is **443**
 - **WLC_USER** =  **Username** with **Privilege Level 15** on your Catalyst 9800 WLC
