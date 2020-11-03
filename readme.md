@@ -24,12 +24,6 @@ This code can also be applied to traditional 'Over-The-Top' Cisco APs and Cataly
 - Wireless administrators must first create a unique policy tag manually and assign each AP to it. 
 - This code can later be utilized to standardize all OTT APs with a site-tag to a working site-tag with the same name as its policy-tag.
 
-# Site-Tag Summary
-Site-tags on the Catalyst 9800 Wireless Controller platform replace AP groups found on Cisco Aironet WLCs, and serve the following purposes:
-- Define if an AP is configured for Local Mode or Flexconnect mode; contains the AP Join Profile and Flex Profile that is applied to the AP.
-- Include attributes that are specific to the physical site. For example, the list of primary APs for efficient upgrade is a part of a site-tag.
-- Sent as a AAA RADIUS attribute that can be used for Cisco ISE, particularly to differentiate authorization results for wireless clients associating to different APs.
-
 # How This Code Works
 This Python code will accomplish the following tasks:
 1. Identify all policy-tags and site-tags that exist on the C9800 WLC.
@@ -93,36 +87,6 @@ pip install -r requirements.txt
 ```console
 python main.py
 ```
-
-# FAQ 
-1. What is the purpose of each file?
-    - [util.py](util.py) - Contains all necessary Python functions
-    - [config.py](config.py) - Contains Catalyst 9800 WLC config info and YANG data models for API calls
-    - [main.py](main.py) - Primary code. This is the file you execute to run this code. 
-2. Does this code use NETCONF, RESTCONF, or both?
-
-    - This code leverages **RESTCONF** APIs and **YANG** data models only. **NETCONF** is not used.
-
-3. How do I enable RESTCONF on my Catalyst 9800 WLC?
-    - From a command prompt, type:
-    ```console
-    WLC(config)# restconf
-    ```
-    - More information can be found [here](https://developer.cisco.com/docs/ios-xe/#!enabling-restconf-on-ios-xe/authentication)
-
-4. How do I properly modify [config.py](config.py) with the appropriate information? 
-
-- **WLC_FQDN** = **IP address** or **FQDN** of your Catalyst 9800 WLC's **management IP**
-- **WLC_PORT** = Port used for **RESTCONF** API calls on your WLC. Default is **443**
-- **WLC_USER** =  **Username** with **Privilege Level 15** on your Catalyst 9800 WLC
-- **WLC_PASS** = **Password** of your **Username** with **Privilege Level 15** on your Catalyst 9800 WLC
-- **WLC_TAG** = The **name** of any **policy-tag** you want to exclude during discovery.
-    - You can use the **+ operator** to concatenate as many tags that you want to exclude
-    - For best results, leave this variable at its **default value**.
-
-
-*NOTE: Do not modify any of the YANG data models below the line **# WLC API Calls***
-
 # Tutorial
 In this scenario, there are four fabric APs joined to a fabric C9800 WLC managed by DNA Center.
 - Each AP is assigned to the 1st Floor Site of the building **SesameSt**.
@@ -177,8 +141,42 @@ WARNING: Applying this change to the selected group of APs will cause them to re
 Applying payload to C9800-80 Wireless LAN Controller..
 <Response [204]>
 ```
+# About Site-Tags
+Site-tags on the Catalyst 9800 Wireless Controller platform replace AP groups found on Cisco Aironet WLCs, and serve the following purposes:
+- Define if an AP is configured for Local Mode or Flexconnect mode; contains the AP Join Profile and Flex Profile that is applied to the AP.
+- Include attributes that are specific to the physical site. For example, the list of primary APs for efficient upgrade is a part of a site-tag.
+- Sent as a AAA RADIUS attribute that can be used for Cisco ISE, particularly to differentiate authorization results for wireless clients associating to different APs.
 
-# Authors & Maintainers
+# FAQ 
+1. What is the purpose of each file?
+    - [util.py](util.py) - Contains all necessary Python functions
+    - [config.py](config.py) - Contains Catalyst 9800 WLC config info and YANG data models for API calls
+    - [main.py](main.py) - Primary code. This is the file you execute to run this code. 
+2. Does this code use NETCONF, RESTCONF, or both?
+
+    - This code leverages **RESTCONF** APIs and **YANG** data models only. **NETCONF** is not used.
+
+3. How do I enable RESTCONF on my Catalyst 9800 WLC?
+    - From a command prompt, type:
+    ```console
+    WLC(config)# restconf
+    ```
+    - More information can be found [here](https://developer.cisco.com/docs/ios-xe/#!enabling-restconf-on-ios-xe/authentication)
+
+4. How do I properly modify [config.py](config.py) with the appropriate information? 
+
+- **WLC_FQDN** = **IP address** or **FQDN** of your Catalyst 9800 WLC's **management IP**
+- **WLC_PORT** = Port used for **RESTCONF** API calls on your WLC. Default is **443**
+- **WLC_USER** =  **Username** with **Privilege Level 15** on your Catalyst 9800 WLC
+- **WLC_PASS** = **Password** of your **Username** with **Privilege Level 15** on your Catalyst 9800 WLC
+- **WLC_TAG** = The **name** of any **policy-tag** you want to exclude during discovery.
+    - You can use the **+ operator** to concatenate as many tags that you want to exclude
+    - For best results, leave this variable at its **default value**.
+
+
+*NOTE: Do not modify any of the YANG data models below the line **# WLC API Calls***
+
+# Authors
 Please contact me with questions or comments.
 - James Sciortino - james.sciortino@outlook.com
 
