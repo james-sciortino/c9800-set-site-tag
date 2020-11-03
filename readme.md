@@ -40,6 +40,7 @@ This Python code will accomplish the following tasks:
 
 # Installation Steps
 1. Clone the repository from a Bash or PowerShell terminal
+
 Bash and PowerShell:
 ```console
 git clone https://github.com/james-sciortino/C9800-Set-Site-Tag.git
@@ -50,6 +51,7 @@ Bash and PowerShell:
 cd c9800-set-site-tag
 ```
 3. Update [config.py](config.py) with your C9800's information, including hostname or management IP address, port, username & password
+
 Bash:
 ```console
 nano config.py
@@ -64,6 +66,7 @@ Bash and PowerShell:
 python -m venv venv
 ```
 5. Start the virtual environment and install [requirements.txt](requirements.txt) from the <c9800-set-site-tag> folder:
+
 Bash:
 ```console
 source venv/scripts/activate
