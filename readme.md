@@ -130,7 +130,8 @@ In this scenario, there are four fabric APs joined to a fabric C9800 WLC managed
 - The policy-tag name provides specific context to AP's floor assignment; only AP's on this floor are assigned to this policy-tag.
 - Each AP is provisioned with its default site-tag named "**default-site-tag-fabric**"
 - The site-tag name is generic and applied to all Cisco APs on the WLC.
-*The goal is assign a unique site-tag name for each AP that matches its unique policy-tag name.*
+
+The goal is assign a unique site-tag name for each AP that matches its unique policy-tag name.
 - Each net-new site-tag will be cloned with the same profile assignments as the default site-tag.
 - Each AP will be assigned to a working site-tag named "**PT_SesameSt_Floor1_bba53**" and then will be **rebooted**.
 
