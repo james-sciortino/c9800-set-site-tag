@@ -48,7 +48,7 @@ nano config.py
 ```console
 python3 -m venv venv
 ```
-5. Start the virtual environment and install requirements.txt from the <c9800-set-site-tag>
+5. Start the virtual environment and install [requirements.txt](requirements.txt) from the <c9800-set-site-tag> folder.
 ```console
 source venv/bin/activate
 pip install -r requirements.txt 
