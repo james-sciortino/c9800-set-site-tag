@@ -53,7 +53,7 @@ python -m venv venv
 ```
 5. Start the virtual environment and install [requirements.txt](requirements.txt) from the <c9800-set-site-tag> folder:
 ```console
-source venv/scripts/activate
+venv/scripts/activate
 pip install -r requirements.txt 
 ```
 6. Run the code
