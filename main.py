@@ -40,7 +40,7 @@ util.yes_no(answer2)
 print("Scanning Cisco Access Points..")
 util.spacer()
 get_ap_tags = util.ap_cfg()
-print("The follow table shows the AP and site-tag assignments...")
+print("The following table shows the AP and site-tag assignments...")
 duplicated_tags = util.duplicate_tags(get_ap_tags)
 
 # Step 5. For each Cisco Access Point that does not have a site-tag that matches its policy-tag, assign the respective site-tag.

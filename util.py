@@ -89,18 +89,21 @@ def clone_site_tags(net_new):
     response = requests.request("GET", url, auth=HTTPBasicAuth(WLC_USER, WLC_PASS), 
                                 headers=headers, verify=False)
 
+    # Commented-out line-items are only for copying Flex profiles.
     join_profile = response.json()["Cisco-IOS-XE-wireless-site-cfg:site-cfg-data"]["site-tag-configs"]["site-tag-config"][1]["ap-join-profile"]
-    flex_profile =  response.json()["Cisco-IOS-XE-wireless-site-cfg:site-cfg-data"]["site-tag-configs"]["site-tag-config"][1]["flex-profile"] 
-    local_site =  response.json()["Cisco-IOS-XE-wireless-site-cfg:site-cfg-data"]["site-tag-configs"]["site-tag-config"][1]["is-local-site"] 
+    #flex_profile =  response.json()["Cisco-IOS-XE-wireless-site-cfg:site-cfg-data"]["site-tag-configs"]["site-tag-config"][1]["flex-profile"]
+    #local_site =  response.json()["Cisco-IOS-XE-wireless-site-cfg:site-cfg-data"]["site-tag-configs"]["site-tag-config"][1]["is-local-site"] 
     site_tag =  response.json()["Cisco-IOS-XE-wireless-site-cfg:site-cfg-data"]["site-tag-configs"]["site-tag-config"][1]["site-tag-name"]
+    
     generate_list = [] 
     for new_site in net_new:
+        # Commented-out line-items are only for copying Flex profiles.
         template =   { 
                     "site-tag-name": new_site, 
                     "description": ("Created via Python on " + todays_date), 
-                    "flex-profile": flex_profile, 
+                    #"flex-profile": flex_profile, 
                     "ap-join-profile": join_profile, 
-                    "is-local-site": local_site 
+                    #"is-local-site": local_site 
                     }
         generate_list.append(template)  
     create_string = '{"Cisco-IOS-XE-wireless-site-cfg:site-tag-config":' + json.dumps(generate_list) + "}" 
