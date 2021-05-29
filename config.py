@@ -2,10 +2,10 @@
 # Replace all values below with your production WLC
 
 # WLC Parameters
-WLC_FQDN = "192.168.20.33"
+WLC_FQDN = "WLC.local.host"
 WLC_PORT = "443"
-WLC_USER =  "dnoadmin"
-WLC_PASS = "Cisco123"
+WLC_USER =  "admin"
+WLC_PASS = "password"
 WLC_TAG = ["default-policy-tag"]
 
 # WLC API Calls
